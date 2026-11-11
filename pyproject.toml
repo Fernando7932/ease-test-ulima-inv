@@ -9,7 +9,39 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "google-adk>=2.14.0",
+    "pre-commit>=4.7.0",
 ]
 
 [tool.uv]
 package = false
+
+[tool.commitizen.customize]
+commit_parser = "^(?P<change_type>feat|fix|refactor|style|test|docs|chore|perf|ci|build)(?:\\((?P<scope>[^()\\r\\n]*)\\))?:\\s(?P<message>.*)?"
+
+info = """
+Debes seguir las siguientes convenciones:
+
+  tipo(scope): [UH-123] descripción en minúsculas sin punto final
+
+Tipos con User History obligatorio: feat, fix, refactor, style, test, perf, ci, build
+Tipos sin User History (opcional): docs, chore
+
+Ejemplos válidos:
+  feat(catalog): [CODHU-101] agregar filtro por tipo de agente
+  docs: actualizar README con instrucciones de setup
+"""
+
+schema_pattern = "^(?:(?:feat|fix|refactor|style|test|perf|ci|build|docs|chore)(?:\\([a-zA-Z0-9_-]+\\))?: (?:\\[[A-Z]+-\\d+\\] )?[a-z0-9].*[^.])$"
+
+# Configuración del Ruff
+[tool.ruff]
+target-version = "py312"
+line-length = 200
+
+[tool.ruff.lint]
+select = [
+    "E",  # Errores de estilo
+    "F",  # Variables/imports no usados
+    "I",  # Ordena imports automáticamente
+    "B",  # Flake8 bugbear (posibles bugs)
+]
