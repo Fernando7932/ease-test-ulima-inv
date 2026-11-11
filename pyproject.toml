@@ -1,0 +1,15 @@
+[project]
+name = "ease-test-ulima-inv"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "FernandoQ7932", email = "fernando.quispe@rimac.com.pe" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "google-adk>=2.14.0",
+]
+
+[tool.uv]
+package = false

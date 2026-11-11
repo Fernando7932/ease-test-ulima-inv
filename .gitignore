@@ -11,3 +11,7 @@ wheels/
 
 # env vars
 .env
+
+.idea/
+.python-version
+
