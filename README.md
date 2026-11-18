@@ -33,6 +33,8 @@ ease-test-ulima-inv/
 
 ## 2. Arquitectura de la Experimentación (EASE Framework)
 
+![Arquitectura EASE Replicación](docs/images/ease_architecture_replication.png)
+
 El framework evalúa agentes en tres capas desacopladas:
 
 1. **Capa de Datos (`data/`):**
